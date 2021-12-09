@@ -28,8 +28,8 @@
                             <span class="navbar-toggler-icon "></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                            <li><a class="dropdown-item text-white fw-bold" href="#">Accueil</a></li>
-                            <li><a class="dropdown-item text-white fw-bold" href="#">Mon compte</a></li>
+                            <li><a class="dropdown-item text-white fw-bold" href="index.php">Accueil</a></li>
+                            <li><a class="dropdown-item text-white fw-bold" href="profil.php">Mon compte</a></li>
                             <li><a class="dropdown-item text-white fw-bold" href="#">Nos voiture</a></li>
                             <li><a class="dropdown-item text-white fw-bold" href="#">Mes réservations</a></li>
                             <li><a class="dropdown-item text-white fw-bold" href="#">Contact</a></li>
@@ -42,7 +42,7 @@
 
                     <!--ANCHOR Logo site + connexion -->
                     <div class="logo col-2 p-0">
-                        <a href="" class="text-decoration-none whitee">Locvoit</a>
+                        <a href="index.php" class="text-decoration-none whitee">Locvoit</a>
                     </div>
                     <div class="log col-1 offset-8">
                         <li class="grow"><button class="text-decoration-none whitee fw-bold" data-toggle="modal" data-target="#modalLoginForm">Connexion</button></li>

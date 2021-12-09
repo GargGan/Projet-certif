@@ -9,7 +9,7 @@
                 <ul class="social d-flex gap-3 offset-lg-7">
                     <li><a href="https://www.instagram.com/" target="_blank"><img src="./img/insta.png" width="40" alt="instagram"> </a></li>
                     <li><a href="https://www.facebook.com/" target="_blank"><img src="./img/facebook.png" width="40" alt="facebook"> </a></li>
-                    <li><a href="twitter.com" target="_blank"><img src="./img/twitter.png" width="40" alt="twitter"></a></li>
+                    <li><a href="https://www.twitter.com" target="_blank"><img src="./img/twitter.png" width="40" alt="twitter"></a></li>
                     <li><a href="https://fr.linkedin.com/" target="_blank"><img src="./img/LinkedIn.png" width="40" alt="linkedIn"></a></li>
                 </ul>
             </div>

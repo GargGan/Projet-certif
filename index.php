@@ -124,8 +124,8 @@
                            </div>
 
                            <div class="mx-5 pt-3 mb-1">
-                               <p class="font-small d-flex justify-content-center mt-4">Pas un membre? <a href="#" class="text-decoration-none white-text fw-bold ml-1">
-                                       Inscrivez-vous</a></p>
+                               <p class="font-small d-flex justify-content-center mt-4">Pas un membre?<button class="text-decoration-none white-text fw-bold ml-1" class="close" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#modalInscriptionForm">
+                                       Inscrivez-vous</button></p>
                            </div>
                        </div>
                    </div>

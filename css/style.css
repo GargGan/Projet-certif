@@ -217,8 +217,10 @@ li {
     margin-top: 1rem;
     margin-right: 1rem;
 }
-.mx-5 a {
+.mx-5 button {
     text-shadow: 0 2px 4px rgb(0 0 0 / 60%);
+    border: none;
+    background: none;
 }
 .mx-5 .font-small {
     color: honeydew;
@@ -290,6 +292,30 @@ li {
         text-shadow: 0 0 10px #babfc1, 0 0 20px #969191, 0 0 40px #727475, 0 0 80px #000000;
     }
 }
+
+
+
+
+
+/* ANCHOR PROFIL PAGE*/
+
+.banniere img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /* ANCHOR FOOTER */
