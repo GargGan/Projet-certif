@@ -1,0 +1,307 @@
+:root {
+    --header-bg-color: #2C2C2C;
+    --second-bg: #0072FF;
+    --white: #fff;
+}
+.whitee {
+    color: var(--white);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+/* ANCHOR HEADER */
+.navbar {
+    background-color: var(--header-bg-color);
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 60%);
+}
+
+.form-control  {
+    background-color: var(--second-bg); 
+}
+.navform .form-control {
+    border-bottom: 1px solid white;
+    border-radius: 0px;
+}
+
+.navform {
+    background-color: var(--second-bg); 
+    height: 90px;   
+    box-shadow: inset rgb(0 0 0 / 19%) 0px 10px 20px, inset rgb(0 0 0 / 23%) 0px -3px 6px;
+}
+
+.form-control::placeholder {
+    color: var(--white);
+}
+
+  .navform input {
+      border: none;
+}
+
+.grow button {
+    background: none;
+    border: none;
+}
+
+
+/*ANCHOR MAIN INDEX */
+.imgcarou {
+    object-fit: cover;
+}
+
+.bg-blue {
+    background-color: var(--second-bg); 
+    box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, inset rgb(0 0 0 / 23%) 1px 4px 4px;
+}
+
+
+.slogan {
+    text-align: center;
+    color: var(--white);
+    padding: 5rem;
+    text-shadow: 0px 8px 4px rgb(0 0 0 / 60%);
+}
+
+.model {
+    border-radius: 7px;
+    border: none;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.model a {
+    color: #0072FF;
+    padding: 15px;
+}
+.model:hover { 
+    background: linear-gradient(#c4c4c4, #2c2c2c);    
+}
+.model a:hover {
+    color: var(--white);
+}
+
+.all {
+    margin-bottom: 6rem;
+    margin-top: 6rem;
+    text-shadow: 0 4px 4px rgb(0 0 0 / 60%);
+    font-size: 1.4rem;
+}
+
+/* ANCHOR Form log */
+
+.modal-content .square {
+    position: absolute;
+    border-radius: 15px;
+    background-color: #3995e1b0;
+}
+.modal-content .squareinscription {
+    position: absolute;
+    border-radius: 15px;
+    background-color: #3995e1b0;
+}
+
+
+.modal-content .square:nth-child(1) {
+    top: 550px;
+    right: -60px;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    background-color: #3995e159;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.modal-content .square:nth-child(2) {
+    top: 50px;
+    right: 30px;
+    width: 542px;
+    height: 526px;
+    z-index: 5;
+    border-radius: 50px;
+    background-color: #ffffff1a;
+    box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
+}
+.modal-content .squareinscription {
+    top: 22px;
+    right: 30px;
+    width: 542px;
+    height: 577px;
+    z-index: 5;
+    border-radius: 50px;
+    background-color: #ffffff1a;
+    box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
+}
+
+.modal-content .square:nth-child(3) {
+    top: 577px;
+    right: 540px;
+    width: 70px;
+    height: 70px;
+    z-index: 0;
+    background-color: #3995e159;
+    box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+}
+
+.modal-content .square:nth-child(4) {
+    top: 12px;
+    right: -27px;
+    width: 100px;
+    height: 152px;
+    z-index: 0;
+    background-color: #3995e1;
+    box-shadow: rgb(0 0 0 / 24%) 9px -14px 20px;
+}
+
+.square .col-7 {
+    display: contents;
+}
+.squareinscription .col-7 {
+    display: contents;
+}
+
+.col-7 .mx-3 {
+    margin-right: 4rem!important;
+    margin-left: 4rem!important;
+}
+
+.modal-content {
+    height: 615px;
+    width: 205%;
+    right: 50%;
+    margin-top: 5%;
+    background-color: #3995E1;
+}
+
+.modal-dialog .modal-content {
+    box-shadow: inset 0px 0px 75px 0px rgb(0 0 0 / 60%);
+    border-radius: 15px;
+}
+
+.modal-title {
+    margin-top: 5rem;
+    text-shadow: 0 4px 4px rgb(0 0 0 / 60%);
+}
+
+.mx-3 .md-form {
+    margin-top: 4rem;
+}
+
+.imglog {
+   width: 100%; 
+   height: 585px;
+    object-fit: cover;
+    margin-top: 1rem;
+    border-radius: 15px;
+}
+
+.butlogging {
+    margin-top: 4rem;
+}
+.butlog {
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, rgb(0 0 0 / 23%) 0px 6px 6px;
+    padding: 10px;
+    width: 200px;
+}
+.close {
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+.mx-5 a {
+    text-shadow: 0 2px 4px rgb(0 0 0 / 60%);
+}
+.mx-5 .font-small {
+    color: honeydew;
+}
+
+/* ANCHOR Form inscription */
+.md-form .validate {
+    margin-bottom: 2rem;
+}
+
+.mx-3 .in {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+
+
+/*ANCHOR effet */
+.image:hover {
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.grow button:hover {
+    transition: 0.5s;
+    color: var(--second-bg);
+}
+
+.allmodel a:hover {
+    color: var(--white);  
+}
+
+.allmodel a:hover, .allmodel a:focus {
+    transition: 0.25s;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px, rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border-radius: 5px;
+}
+
+.social img:hover {
+    transition: 0.25s;
+    transform: scale(1.2);
+}
+
+.logo {
+    width: 140px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #615f5a;
+    text-transform: uppercase;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+    line-height: 0.70em;
+    outline: none;
+    animation: animate 3.5s linear infinite;  
+}
+.logo a:hover {
+   color: var(--second-bg);
+}
+@keyframes animate {
+    18.1%,30%,50%,65%,80.1%,100%
+    {
+        color: #0e3742;
+        text-shadow: none;
+    }
+    18.1%,30%,50%,65%,80.1%,100%
+    {
+        color: #000;
+        text-shadow: 0 0 10px #babfc1, 0 0 20px #969191, 0 0 40px #727475, 0 0 80px #000000;
+    }
+}
+
+
+  /* ANCHOR FOOTER */
+.footer {
+    box-shadow: inset rgb(0 0 0 / 52%) 0px 10px 20px, inset rgb(0 0 0 / 23%) 0px -3px 6px;
+    background-color: var(--header-bg-color);
+}
+
+
+.indexfooter a:hover {  
+        border-bottom: 1px solid #0072FF ;   
+      }
+
+
+  
