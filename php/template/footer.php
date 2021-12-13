@@ -6,7 +6,7 @@
                 <h3>Moyens de paiement acceptés</h3>
             </div>
             <div class="col-8 mt-1">
-                <ul class="social d-flex gap-3 offset-lg-7">
+                <ul class="social d-flex gap-1 offset-lg-7">
                     <li><a href="https://www.instagram.com/" target="_blank"><img src="./img/insta.png" width="40" alt="instagram"> </a></li>
                     <li><a href="https://www.facebook.com/" target="_blank"><img src="./img/facebook.png" width="40" alt="facebook"> </a></li>
                     <li><a href="https://www.twitter.com" target="_blank"><img src="./img/twitter.png" width="40" alt="twitter"></a></li>
@@ -21,8 +21,8 @@
 
     <div class="container">
         <div class="row">
-            <div class="bgfooter d-flex text-white justify-content-center gap-2">
-                <div class="indexfooter col-3">
+            <div class="bgfooter d-flex flex-wrap text-white justify-content-evenly">
+                <div class="indexfooter">
                     <h3 class="text-left mt-5">Qui sommes-nous ?</h3>
                     <ul class="p-0">
                         <li><a href="" class="text-decoration-none text-light">Qui sommes nous ?</a></li>
@@ -31,7 +31,7 @@
                     </ul>
                 </div>
 
-                <div class="indexfooter col-3">
+                <div class="indexfooter">
                     <h3 class="text-left mt-5">Une question ?</h3>
                     <ul class="p-0">
                         <li><a href="" class="text-decoration-none text-light">Rubrique d'aide / FAQ</a></li>
@@ -40,7 +40,7 @@
                     </ul>
                 </div>
 
-                <div class="indexfooter col-3">
+                <div class="indexfooter">
                     <div>
                         <h3 class="text-left mt-5">Information</h3>
                     </div>
