@@ -50,7 +50,7 @@
                         ?>
                             <!-- CONNECT -->
                             <div class="log d-flex flex-column ml-auto">
-                                <a class="grow text-decoration-none whitee fw-bold" href="profil.php"><?php if (!empty($_SESSION['id'])) echo $_SESSION['id']  ?></a>
+                                <a class="grow text-decoration-none whitee fw-bold" href="profil.php"><?php if (!empty($_SESSION['id'])) echo $_SESSION['prenom']  ?></a>
                             </div>
                         <?php
                         else :

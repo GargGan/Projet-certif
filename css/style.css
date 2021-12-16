@@ -46,12 +46,6 @@ li {
       border: none;
 }
 
-.grow button {
-    background: none;
-    border: none;
-}
-
-
 /*ANCHOR MAIN INDEX */
 .imgcarou {
     object-fit: cover;
@@ -69,6 +63,10 @@ li {
     padding: 5rem;
     text-shadow: 0px 8px 4px rgb(0 0 0 / 60%);
 }
+.slogan p {
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+    line-height: 0.70em;
+}
 
 .model {
     border-radius: 7px;
@@ -77,6 +75,7 @@ li {
     text-transform: uppercase;
     font-weight: bold;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    text-shadow: 1px 2px 4px rgb(0 0 0 / 60%);
 }
 .model a {
     color: #0072FF;
@@ -94,7 +93,11 @@ li {
     margin-top: 6rem;
     text-shadow: 0 4px 4px rgb(0 0 0 / 60%);
     font-size: 1.4rem;
+    width: 140px;
+    text-transform: capitalize;
+    line-height: 0.70em;
 }
+
 
 /* ANCHOR Form log */
 
@@ -128,7 +131,7 @@ li {
     z-index: 5;
     border-radius: 50px;
     background-color: #ffffff1a;
-    box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
+    box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px, rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .modal-content .squareinscription {
     top: 22px;
@@ -138,7 +141,7 @@ li {
     z-index: 5;
     border-radius: 50px;
     background-color: #ffffff1a;
-    box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
+    box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px, rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .modal-content .square:nth-child(3) {
@@ -158,7 +161,7 @@ li {
     height: 152px;
     z-index: 0;
     background-color: #3995e1;
-    box-shadow: rgb(0 0 0 / 24%) 9px -14px 20px;
+    box-shadow: rgb(0 0 0 / 24%) 9px -14px 20px, rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
 }
 
 .square .col-7 {
@@ -185,7 +188,7 @@ li {
     margin-top: 5%;
     margin-bottom: 5%;
     background-color: #3995E1;
-    box-shadow: inset 0px 0px 75px 0px rgb(0 0 0 / 60%);
+    box-shadow: inset 0px 0px 75px 0px rgb(0 0 0 / 60%), rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px, rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;;
     border-radius: 15px;
 }
 
@@ -221,6 +224,12 @@ li {
     width: 200px;
     color: #3072D2;
 }
+.butlog:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+}
+
 .close {
     margin-top: 1rem;
     margin-right: 1rem;
@@ -244,17 +253,17 @@ li {
     margin-top: 0;
 }
 
-
+.md-form label {
+    text-shadow: 0px 2px 5px rgb(0 0 0);
+}
+.md-form i {
+    text-shadow: 0px 2px 5px rgb(0 0 0);
+}
 
 /*ANCHOR effet */
 .image:hover {
     transform: scale(1.1);
     transition: .5s;
-}
-
-.grow button:hover {
-    transition: 0.5s;
-    color: var(--second-bg);
 }
 
 .allmodel a:hover {
@@ -268,8 +277,8 @@ li {
 }
 
 .social img:hover {
-    transition: 0.25s;
-    transform: scale(1.2);
+    transition: 0.30s;
+    transform: translateY(-10px);
 }
 
 .logo {
@@ -286,7 +295,7 @@ li {
     animation: animate 3.5s linear infinite;  
 }
 .logo a:hover {
-   color: var(--second-bg);
+   color: #0072FF;
 }
 @keyframes animate {
     18.1%,30%,50%,65%,80.1%,100%
@@ -308,6 +317,7 @@ li {
 /* ANCHOR PROFIL PAGE*/
 
 .banniere {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     height: 400px;
     width: auto;
     background-position: 60% 60%;
@@ -322,11 +332,18 @@ li {
 
 .banniere .nav {
     margin-top: 9.1rem; 
-    background: #2C2C2C;  
+    background: #2C2C2C; 
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; 
+    text-shadow: 1px 2px 4px rgb(0 0 0 / 60%);
 }
 .nav-link.active, .nav-item.show .nav-link {
     background: #0072FF !important; 
     border: none !important; 
+}
+
+.myprofil .nav {
+    box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+    text-shadow: 1px 2px 4px rgb(0 0 0 / 60%);
 }
 
 /* ANCHOR profil profil */
@@ -335,6 +352,7 @@ li {
 }
 .myprofil .nav {
     background: #2C2C2C;
+    border-radius: 5px;
 }
 .myprofil {
     margin-top: 5rem;
@@ -345,6 +363,7 @@ li {
 .col-lg-12 .bggrey {
     height: 100px;
     border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px, rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;   
 }
 .col-lg-12 .bio {
     height: 200px;
@@ -352,11 +371,14 @@ li {
 }
 .bggrey input, .bggrey textarea {
     background: #C4C4C4;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 .bio, .city {
-    margin-bottom: 10rem;
+    margin-bottom: 4rem;
 }
-
+.bggrey label {
+    text-shadow: 0px 4px 5px rgb(0 0 0);
+}
 .bggrey
 #name {
     width: 70%;
@@ -364,6 +386,25 @@ li {
 #story {
     width: 100%;
 }
+.butsend {
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(#b3b0b0, #262626);
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, rgb(0 0 0 / 23%) 0px 6px 6px;
+    padding: 10px;
+    width: 200px;
+    color: white;
+    margin-bottom: 4rem;
+}
+.butsend:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+    background: #3072D2;
+    color: white;
+}
+
 
 /* ANCHOR profil contact
 
@@ -376,12 +417,13 @@ li {
   /* ANCHOR FOOTER */
 .footer {
     box-shadow: inset rgb(0 0 0 / 52%) 0px 10px 20px, inset rgb(0 0 0 / 23%) 0px -3px 6px;
-    background-color: var(--header-bg-color);
+    background-color: var(--header-bg-color);  
 }
 
 
 .indexfooter a:hover {  
-        border-bottom: 1px solid #0072FF ;   
+        border-bottom: 1px solid #0072FF ;
+        transition: 0.25s;   
       }
 
 

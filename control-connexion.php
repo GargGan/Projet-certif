@@ -13,25 +13,26 @@ if (isset($_POST['connect'])) {
         $password = inscription($_POST['password']);
         // ANCHOR preparation vérif
         if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-            $verifMail = $pdo->prepare('SELECT * from utilisateurs where email = ? AND password = ?');
-            $verifMail->execute(array($mail, $password));
-            $existMail = $verifMail->rowCount();
+            $verifMail = $pdo->prepare('SELECT * from utilisateurs where email = ?');
+            $verifMail->execute(array($mail));
+            $userExist = $verifMail->rowCount();
             // ANCHOR Si il y a déjà un mail
-            if ($existMail == 1) {
+            if ($userExist == 1) {
                 $user = $verifMail->fetch();
                 // ANCHOR si le password est bien celui du mail
-                if (password_verify($password, $user['password'])) {
+                if (password_verify($password, $user['password'])){
                     $password = password_hash($password, PASSWORD_DEFAULT);
-                    $_SESSION['id'] = $user['user_id'];
-                    $_SESSION['id'] = $user['prenom'];
-                    if($user['admin'] == 1){
-                        header('Location: admin.php');
-                    } else {
-                        header('Location: index.php?id=' . $_SESSION['id']);
-                    }
+                    // ANCHOR Session prend les valeurs du tableau
+                    $_SESSION['id'] = $user['id'];
+                    $_SESSION['prenom'] = $user['prenom'];
+                    $_SESSION['email'] = $user['email'];
+                    header('Location: index.php?id=' . $_SESSION['id']);
+                    
+                } else {
+                    $err = 'Mot de passe incorrect';
                 }
             } else {
-                $err = 'Mauvais e-mail ou mot de passe';
+                $err = 'E-mail ou mot de passe incorrect';
             }
         } 
     }else {

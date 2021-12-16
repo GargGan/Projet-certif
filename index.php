@@ -52,7 +52,7 @@ include 'php\template\header.php';
             <section class="bg-blue">
                 <div>
                     <div class="slogan">
-                        <h2>Cherchez à vivre vos rêves, roulez !</h2>
+                        <h2 class="d-flex justify-content-center"><p class="col-2">Cherchez à vivre vos rêves, roulez !</p></h2>
                     </div>
 
                     <div class="d-flex flex-wrap justify-content-center">
@@ -90,7 +90,7 @@ include 'php\template\header.php';
                         </div>
                     </div>
                     <div class="allmodel d-flex justify-content-center">
-                        <a class="all text-decoration-none whitee fw-bold" href=""> > Tout nos modèles < </a>
+                        <a class="all text-decoration-none whitee fw-bold text-center" href=""> > Tout nos modèles < </a>
                     </div>
                 </div>
             </section>

@@ -1,5 +1,4 @@
 <footer class=" footer container p-0">
-
     <div class="bgfooter container text-white p-1">
         <div class="row mt-3">
             <div class="col-4">
