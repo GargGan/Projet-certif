@@ -22,11 +22,11 @@ if (isset($_POST['inscri'])) {
                     $verifMail = $pdo->prepare('SELECT email from utilisateurs where email = ?');
                     $verifMail->execute(array($email));
                     $existMail = $verifMail->rowCount();
+                    
                     // ANCHOR Si il n'y a pas d'email
                     if ($existMail == 0) {
 
                         // ANCHOR Hashage du mot de passe 
-
                         if ($pass === $pass2) {
                             $hash = password_hash($pass, PASSWORD_DEFAULT);
                             if (password_verify($pass, $hash)) {
