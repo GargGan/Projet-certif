@@ -30,9 +30,8 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                                 <li><a class="dropdown-item text-white fw-bold" href="index.php">Accueil</a></li>
-                                <li><a class="dropdown-item text-white fw-bold" href="profil.php">Mon compte</a></li>
-                                <li><a class="dropdown-item text-white fw-bold" href="#">Nos voiture</a></li>
-                                <li><a class="dropdown-item text-white fw-bold" href="#">Mes réservations</a></li>
+                                <li><a class="dropdown-item text-white fw-bold" href="profil.php">Mon compte</a></li>                               
+                                <li><a class="dropdown-item text-white fw-bold" href="mes-annonces.php">Mes annonces</a></li>
                                 <li><a class="dropdown-item text-white fw-bold" href="#">Contact</a></li>
                                 <li>
                                     <hr class="dropdown-divider">

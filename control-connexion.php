@@ -30,7 +30,11 @@ if (isset($_POST['connect'])) {
                     $_SESSION['id'] = $user['id'];
                     $_SESSION['prenom'] = $user['prenom'];
                     $_SESSION['email'] = $user['email'];
-                    header('Location: index.php?id=' . $_SESSION['id']);
+                    if($user['role'] == 1){
+                        header('Location: admin.php');
+                    } else {
+                        header('Location: index.php?id=' . $_SESSION['id']);
+                    }
                     
                 } else {
                     $err = 'Mot de passe incorrect';
