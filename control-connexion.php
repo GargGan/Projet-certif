@@ -27,7 +27,10 @@ if (isset($_POST['connect'])) {
                     $_SESSION['id'] = $user['id'];
                     $_SESSION['prenom'] = $user['prenom'];
                     $_SESSION['email'] = $user['email'];
+<<<<<<< HEAD
                     $_SESSION['role'] = $user['email'];
+=======
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
                     if($user['role'] == 1){
                         header('Location: admin.php');
                     } else {

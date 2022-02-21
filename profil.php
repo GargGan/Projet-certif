@@ -18,7 +18,11 @@ if (isset($_SESSION['id'])) :
                 <div class="d-flex justify-content-center">
                     <?php if (!empty($user['avatar'])) {
                     ?>
+<<<<<<< HEAD
                         <img src="avatars/<?= $user['avatar']; ?>" alt="avatar" width="150px">
+=======
+                        <img src="avatars/<?= $user['avatar']; ?>" alt="" width="150px">
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
                     <?php
                     } ?>
                 </div>
@@ -40,7 +44,11 @@ if (isset($_SESSION['id'])) :
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="profil" role="tabpanel" aria-labelledby="profil-tab">
                     <div class="container p-0">
+<<<<<<< HEAD
                         
+=======
+                        <!--ANCHOR Ouverture des tabs du second menu tab -->
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
                         <div class="tab-content" id="myTabContent">
                             <!-- Profil profil -->
                             <div class="tab-pane fade show active" id="profilee" role="tabpanel" aria-labelledby="profilee-tab">
@@ -104,7 +112,11 @@ if (isset($_SESSION['id'])) :
                                             </div>
                                         </div>
 
+<<<<<<< HEAD
                                         <!-- city -->
+=======
+                                        <!-- ville -->
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
                                         <div class="bggrey city col-sm-12 col-md-8 col-lg-5 text-white d-flex align-items-center justify-content-center gap-2">
                                             <div class="col-3">
                                                 <label class="text-white" data-error="wrong" data-success="right" for="defaultForm-city">Ville</label>
@@ -254,7 +266,11 @@ if (isset($_SESSION['id'])) :
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
             </div> 
+=======
+            </div> <!-- Fin tabs premier menu -->
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
 
         </div>
 

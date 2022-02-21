@@ -8,6 +8,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 <!DOCTYPE html>
 
+<<<<<<< HEAD
 
 
 <body>
@@ -15,11 +16,20 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     <?php
     // $id = 0;
+=======
+<body>
+    <?php
+    $id = 0;
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
     if (!empty($_GET['id'])) {
         $id = $_REQUEST['id'];
     }
     if (!empty($_POST)) {
+<<<<<<< HEAD
         $id = inscription($_POST['id']);
+=======
+        $id = $_POST['id'];
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
         $sql = "DELETE FROM utilisateurs WHERE id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
@@ -27,7 +37,10 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         header("Location: index.php");
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "SELECT prenom FROM utilisateurs WHERE id = $id";
@@ -48,12 +61,17 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 <div class="form-actions">
                     <button type="submit" class="btn btn-danger">Yes</button>
+<<<<<<< HEAD
                     <a class="btn" href="admin.php">No</a>
+=======
+                    <a class="btn" href="index.php">No</a>
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
                 </div>
             </form>
         </div>
     </div>
 
+<<<<<<< HEAD
 
     
 
@@ -61,4 +79,8 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 </body>
 
 
+=======
+</body>
+
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
 </html>

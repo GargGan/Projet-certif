@@ -7,13 +7,17 @@ $pdo = Database::connect();
 
 <?php
 if (isset($_SESSION['id'])) :
+<<<<<<< HEAD
     $requser = $pdo->prepare("SELECT * FROM utilisateurs WHERE id = ?");
     $requser->execute(array($_SESSION['id']));
     $user = $requser->fetch();
+=======
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
 ?>
     <main>
         <div class="container p-0">
             <div class="banniere col-lg-12 d-flex flex-column align-items-center">
+<<<<<<< HEAD
                 <!-- Banner with tab menu -->
                 <div class="d-flex justify-content-center">
                     <?php if (!empty($user['avatar'])) {
@@ -21,6 +25,11 @@ if (isset($_SESSION['id'])) :
                         <img src="avatars/<?= $user['avatar']; ?>" alt="avatar" width="150px">
                     <?php
                     } ?>
+=======
+                <!-- Banniere avec un menu tab implementé à l'intérieur -->
+                <div class="d-flex justify-content-center">
+                    <img src="img/avatar.png" alt="">
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
                 </div>
                 <!--ANCHOR Menu tab -->
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -30,7 +39,11 @@ if (isset($_SESSION['id'])) :
 
             <div class="container">
                 <div class="art col-lg-12 d-flex p-0 gap-5">
+<<<<<<< HEAD
                     <!-- ANCHOR search -->
+=======
+                    <!-- ANCHOR recherche -->
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
                     <div class="aside-left col-md-3 col-lg-3 p-0">
                         <input class="form-control me-2 " type="search" placeholder="Recherche..." aria-label="Search">
                     </div>
@@ -83,11 +96,18 @@ if (isset($_SESSION['id'])) :
                         <!-- ANCHOR articles -->
 
                         <?php
+<<<<<<< HEAD
 
                         $pdo = Database::connect();
 
                         $articles = $pdo->prepare('SELECT * FROM articles WHERE user_id = ? ORDER BY date_time_publication');
                         $articles->execute(array($_SESSION['id']));
+=======
+                        
+                        $pdo = Database::connect();
+                        // ANCHOR Récupération articles BDD
+                        $articles = $pdo->query('SELECT * FROM articles ORDER BY date_time_publication');
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
                         while ($a = $articles->fetch()) {
                         ?>
                             <div class="articles">

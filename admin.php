@@ -11,11 +11,19 @@ $pdo = Database::connect();
 <main>
 
     <?php
+<<<<<<< HEAD
     
     $requser = $pdo->prepare("SELECT * FROM utilisateurs WHERE id = ?");
     $requser->execute(array($_SESSION['id']));
     $user = $requser->fetch();
   
+=======
+    // ANCHOR requete pour recupérer donnée utilisateur  
+    $requser = $pdo->prepare("SELECT * FROM utilisateurs WHERE id = ?");
+    $requser->execute(array($_SESSION['id']));
+    $user = $requser->fetch();
+    // ANCHOR Si connecté avec role admin = dashboard sinon renvoyer sur index
+>>>>>>> 52afaba3d72b67ba0ffb7952830586b416d9f3f7
     if (isset($_SESSION['id']) && ($user['role'] == 1)) :
     ?>
         <div class="container">
