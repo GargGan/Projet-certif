@@ -17,21 +17,19 @@ if (isset($_POST['inscri'])) {
 
             if ($email === $email2) {
 
-                // ANCHOR Verification si email est déjà existant en base de donnée 
+                
                 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
                     $verifMail = $pdo->prepare('SELECT email from utilisateurs where email = ?');
                     $verifMail->execute(array($email));
                     $existMail = $verifMail->rowCount();
                     
-                    // ANCHOR Si il n'y a pas d'email
+                    
                     if ($existMail == 0) {
 
-                        // ANCHOR Hashage du mot de passe 
+                        // ANCHOR Hash password 
                         if ($pass === $pass2) {
                             $hash = password_hash($pass, PASSWORD_DEFAULT);
                             if (password_verify($pass, $hash)) {
-
-                                // ANCHOR Insertion dans base de données
                                 $insertUser = $pdo->prepare('INSERT INTO utilisateurs (nom, prenom, email, password) VALUES (?,?,?,?)');
                                 $insertUser->execute(array($nom, $prenom, $email, $hash));
                                 Database::disconnect();

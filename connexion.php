@@ -110,7 +110,7 @@ require 'control-connexion.php';
                         <div class="square"></div>
                         <div class="d-flex">
                             <div class="aside-left aside-left col-sm-5 col-md-5  ">
-                                <img class="imglog" src="img/imgformu.jpg" alt="">
+                                <img class="imglog" src="img/imgformu.jpg" alt="imglogging">
                             </div>
                         </div>
 

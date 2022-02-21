@@ -7,13 +7,20 @@ $pdo = Database::connect();
 
 <?php
 if (isset($_SESSION['id'])) :
+    $requser = $pdo->prepare("SELECT * FROM utilisateurs WHERE id = ?");
+    $requser->execute(array($_SESSION['id']));
+    $user = $requser->fetch();
 ?>
     <main>
         <div class="container p-0">
             <div class="banniere col-lg-12 d-flex flex-column align-items-center">
-                <!-- Banniere avec un menu tab implementé à l'intérieur -->
+                <!-- Banner with tab menu -->
                 <div class="d-flex justify-content-center">
-                    <img src="img/avatar.png" alt="">
+                    <?php if (!empty($user['avatar'])) {
+                    ?>
+                        <img src="avatars/<?= $user['avatar']; ?>" alt="avatar" width="150px">
+                    <?php
+                    } ?>
                 </div>
                 <!--ANCHOR Menu tab -->
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -21,41 +28,26 @@ if (isset($_SESSION['id'])) :
                         <a class="nav-link active text-white" id="profil-tab" data-toggle="tab" href="#profil" role="tab" aria-controls="profil" aria-selected="true">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" id="annonce-tab" data-toggle="tab" href="#annonce" role="tab" aria-controls="annonce" aria-selected="false">Mes annonces</a>
+                        <a class="nav-link text-white" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" id="reservation-tab" data-toggle="tab" href="#reservation" role="tab" aria-controls="reservation" aria-selected="false">Réservation</a>
+                        <a class="nav-link text-white" id="security-tab" data-toggle="tab" href="#security" role="tab" aria-controls="security" aria-selected="false">Sécurité</a>
                     </li>
                 </ul>
             </div>
 
-            <!--ANCHOR Ouverture des tabs -->
+            <!--ANCHOR Open tabs -->
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="profil" role="tabpanel" aria-labelledby="profil-tab">
-                    <!--ANCHOR Second menu tab à l'intérieur du premier onglet tab -->
                     <div class="container p-0">
-                        <div class="myprofil col-lg-12 d-flex flex-column align-items-center">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active text-white" id="profilee-tab" data-toggle="tab" href="#profilee" role="tab" aria-controls="profilee" aria-selected="true">Profil</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" id="security-tab" data-toggle="tab" href="#security" role="tab" aria-controls="security" aria-selected="false">Sécurité</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!--ANCHOR Ouverture des tabs du second menu tab -->
+                        
                         <div class="tab-content" id="myTabContent">
                             <!-- Profil profil -->
                             <div class="tab-pane fade show active" id="profilee" role="tabpanel" aria-labelledby="profilee-tab">
                                 <!-- Photo profil -->
-                                <!--ANCHOR enctype pour encoder l'avatar -->
+                                <!--ANCHOR enctype for avatar -->
                                 <form method="post" enctype="multipart/form-data">
-                                    <div class="col-lg-12 d-flex flex-wrap justify-content-center gap-2">
+                                    <div class="col-lg-12 d-flex flex-wrap justify-content-center gap-3">
                                         <div class="bggrey col-sm-12 col-md-8 col-lg-5 text-white d-flex flex-column align-items-center justify-content-center">
                                             <label class="text-white text-nowrap" data-error="wrong" data-success="right" for="defaultForm-photo">Photo profil</label>
                                             <input type="file" id="defaultForm-photo" class="form-control validate" name="avatar">
@@ -88,57 +80,55 @@ if (isset($_SESSION['id'])) :
                                     ?>
                                 </form>
                             </div>
-
                             <!-- Profil contact -->
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                    <!-- email -->
-                                    <form method="post">
-                                        <div class="col-lg-12 d-flex flex-column align-items-center justify-content-center gap-2">
-                                            <div class="bggrey col-sm-12 col-md-8 col-lg-5 text-white d-flex align-items-center justify-content-center gap-2">
-                                                <div class="col-3">
-                                                    <label class="text-white text-nowrap" data-error="wrong" data-success="right" for="defaultForm-email">Nouveau mail</label>
-                                                </div>
-                                                <div class="col-8">
-                                                    <input type="email" id="defaultForm-email" class="form-control validate" name="newmail">
-                                                </div>
+                            <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <!-- email -->
+                                <form method="post">
+                                    <div class="col-lg-12 d-flex flex-column align-items-center justify-content-center gap-3">
+                                        <div class="bggrey col-sm-12 col-md-8 col-lg-5 text-white d-flex align-items-center justify-content-center gap-2">
+                                            <div class="col-3">
+                                                <label class="text-white text-nowrap" data-error="wrong" data-success="right" for="defaultForm-email">Nouveau mail</label>
                                             </div>
-
-                                            <!-- confirmation email -->
-                                            <div class="bggrey col-sm-12 col-md-8 col-lg-5 text-white d-flex align-items-center justify-content-center gap-2">
-                                                <div class="col-3">
-                                                    <label class="text-white" data-error="wrong" data-success="right" for="defaultForm-confirmemail">Confirmation E-mail</label>
-                                                </div>
-                                                <div class="col-8">
-                                                    <input type="email" id="defaultForm-confirmemail" class="form-control validate" name="newmail2">
-                                                </div>
-                                            </div>
-
-                                            <!-- ville -->
-                                            <div class="bggrey city col-sm-12 col-md-8 col-lg-5 text-white d-flex align-items-center justify-content-center gap-2">
-                                                <div class="col-3">
-                                                    <label class="text-white" data-error="wrong" data-success="right" for="defaultForm-city">Ville</label>
-                                                </div>
-                                                <div class="col-8">
-                                                    <input type="text" id="defaultForm-city" class="form-control validate" name="ville">
-                                                </div>
-                                            </div>
-                                            <div class="text-nowrap d-flex justify-content-center col-4">
-                                                <button type="submit" class="butsend text-decoration-none text-center" name="updateContact">Envoyer</button>
+                                            <div class="col-8">
+                                                <input type="email" id="defaultForm-email" class="form-control validate" name="newmail">
                                             </div>
                                         </div>
-                                        <?php
-                                        if (isset($err)) {
-                                            echo $err;
-                                        }
-                                        ?>
-                                    </form>
-                                </div>
+
+                                        <!-- confirmation email -->
+                                        <div class="bggrey col-sm-12 col-md-8 col-lg-5 text-white d-flex align-items-center justify-content-center gap-2">
+                                            <div class="col-3">
+                                                <label class="text-white" data-error="wrong" data-success="right" for="defaultForm-confirmemail">Confirmation E-mail</label>
+                                            </div>
+                                            <div class="col-8">
+                                                <input type="email" id="defaultForm-confirmemail" class="form-control validate" name="newmail2">
+                                            </div>
+                                        </div>
+
+                                        <!-- city -->
+                                        <div class="bggrey city col-sm-12 col-md-8 col-lg-5 text-white d-flex align-items-center justify-content-center gap-2">
+                                            <div class="col-3">
+                                                <label class="text-white" data-error="wrong" data-success="right" for="defaultForm-city">Ville</label>
+                                            </div>
+                                            <div class="col-8">
+                                                <input type="text" id="defaultForm-city" class="form-control validate" name="ville">
+                                            </div>
+                                        </div>
+                                        <div class="text-nowrap d-flex justify-content-center col-4">
+                                            <button type="submit" class="butsend text-decoration-none text-center" name="updateContact">Envoyer</button>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    if (isset($err)) {
+                                        echo $err;
+                                    }
+                                    ?>
+                                </form>
                             </div>
+                            <!-- Profil security -->
                             <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
                                 <!-- Password -->
                                 <form method="post">
-                                    <div class="col-lg-12 d-flex flex-column align-items-center justify-content-center gap-2">
+                                    <div class="col-lg-12 d-flex flex-column align-items-center justify-content-center gap-3">
                                         <div class="bggrey col-sm-12 col-md-8 col-lg-5 text-white d-flex align-items-center justify-content-center gap-2">
                                             <div class="col-3">
                                                 <label class="text-white" data-error="wrong" data-success="right" for="defaultForm-password">Nouveau Mot de passe</label>
@@ -230,7 +220,7 @@ if (isset($_SESSION['id'])) :
 
                                 <?php
                                 $pdo = Database::connect();
-                                // ANCHOR Récupération articles BDD
+                              
                                 $articles = $pdo->query('SELECT * FROM articles ORDER BY date_time_publication');
                                 while ($a = $articles->fetch()) {
                                 ?>
@@ -264,17 +254,7 @@ if (isset($_SESSION['id'])) :
                         </div>
                     </div>
                 </div>
-
-
-                <div class="tab-pane fade" id="reservation" role="tabpanel" aria-labelledby="reservation-tab">Etsy mixtape
-                    wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack
-                    lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
-                    locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
-                    squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
-                    etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
-                    stumptown. Pitchfork sustainable tofu synth chambray yr.
-                </div>
-            </div> <!-- Fin tabs premier menu -->
+            </div> 
 
         </div>
 

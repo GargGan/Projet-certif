@@ -30,9 +30,8 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                                 <li><a class="dropdown-item text-white fw-bold" href="index.php">Accueil</a></li>
-                                <li><a class="dropdown-item text-white fw-bold" href="profil.php">Mon compte</a></li>
-                                <li><a class="dropdown-item text-white fw-bold" href="#">Nos voiture</a></li>
-                                <li><a class="dropdown-item text-white fw-bold" href="#">Mes réservations</a></li>
+                                <li><a class="dropdown-item text-white fw-bold" href="profil.php">Mon compte</a></li>                               
+                                <li><a class="dropdown-item text-white fw-bold" href="mes-annonces.php">Mes annonces</a></li>
                                 <li><a class="dropdown-item text-white fw-bold" href="#">Contact</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -46,11 +45,11 @@
                             <a href="index.php" class="text-decoration-none whitee">Locvoit</a>
                         </div>
                         <?php
-                        if (isset($_SESSION['id'])) :
+                        if (isset($_SESSION['id']) && !empty($_SESSION['id'])) :
                         ?>
                             <!-- CONNECT -->
                             <div class="log d-flex flex-column ml-auto">
-                                <a class="grow text-decoration-none whitee fw-bold" href="profil.php"><?php if (!empty($_SESSION['id'])) echo $_SESSION['prenom']  ?></a>
+                                <a class="grow text-decoration-none whitee fw-bold" href="profil.php"><?php if (isset($_SESSION['id']) && !empty($_SESSION['id']))  echo $_SESSION['prenom']  ?></a>
                             </div>
                         <?php
                         else :

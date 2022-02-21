@@ -6,7 +6,7 @@ $pdo = Database::connect();
 
 // ANCHOR profil contact
 if (isset($_POST['updateContact'])) {
-
+    
     $requser = $pdo->prepare("SELECT * FROM utilisateurs WHERE id = ?");
     $requser->execute(array($_SESSION['id']));
     $user = $requser->fetch();
@@ -17,17 +17,18 @@ if (isset($_POST['updateContact'])) {
         $ville = inscription($_POST['ville']);
         $villeLength = mb_strlen($ville);
 
+        
         if (empty($_POST['ville'])) {
             $insertville = $pdo->prepare("UPDATE utilisateurs SET ville = ? WHERE id = ?");
             $insertville->execute(array($user['ville'], $_SESSION['id']));
 
-            
+             
             if (filter_var($newmail, FILTER_VALIDATE_EMAIL)) {
                 $verifNewMail = $pdo->prepare('SELECT email from utilisateurs where email = ?');
                 $verifNewMail->execute(array($newmail));
                 $existMail = $verifNewMail->rowCount();
 
-               
+              
                 if ($existMail == 0) {
 
                     
@@ -42,7 +43,7 @@ if (isset($_POST['updateContact'])) {
                     $err = 'Mail déjà utilisé';
                 }
             }
-        } else if (($villeLength <= 20 && $villeLength > 3)) {
+        } else if (($villeLength <= 255 && $villeLength > 3)) {
             $insertville = $pdo->prepare("UPDATE utilisateurs SET ville = ? WHERE id = ?");
             $insertville->execute(array($ville, $_SESSION['id']));
         }
@@ -65,14 +66,14 @@ if (isset($_POST['updateProfil'])) {
             $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1)); 
 
             if (in_array($extensionUpload, $extensionValides)) {
-           
+             
                 $chemin = "avatars/" . $_SESSION['id'] . "." . $extensionUpload;
                 $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
 
                 if ($resultat) {
                     $updateavatar = $pdo->prepare('UPDATE utilisateurs SET avatar = :avatar WHERE id = :id');
                     $updateavatar->execute(array(
-                        'avatar' => $_SESSION['id'] . "." . $extensionUpload, 
+                        'avatar' => $_SESSION['id'] . "." . $extensionUpload, //ANCHOR file take user id then extension
                         'id' => $_SESSION['id']
                     ));
                 } else {
@@ -91,28 +92,28 @@ if (isset($_POST['updateProfil'])) {
 
 // ANCHOR profil SECURITY
 if (isset($_POST['updateSecurity'])) {
-    
+   
     $requser = $pdo->prepare("SELECT * FROM utilisateurs WHERE id = ?");
     $requser->execute(array($_SESSION['id']));
     $user = $requser->fetch();
- 
+   
     if (isset($_POST['newpassword'], $_POST['newpassword2']) && !empty($_POST['newpassword'])) {
         $newpassword = inscription($_POST['newpassword']);
         $newpassword2 = inscription($_POST['newpassword2']);
 
-     
+        //ANCHOR  password = old password, or stop
         if (password_verify($newpassword, $user['password'])) {
             $newpassword = password_hash($newpassword, PASSWORD_DEFAULT);
             $err = "Entrez un nouveau mot de passe";
 
-        
+            //ANCHOR if same
         } else if ($newpassword === $newpassword2) {
-           
+            //ANCHOR creat hash
             $hash = password_hash($newpassword, PASSWORD_DEFAULT);
-           
+            // ANCHOR if newpass hash
             if (password_verify($newpassword, $hash)) {
 
-               
+                // ANCHOR update into database
                 $insertPassword = $pdo->prepare("UPDATE utilisateurs set password = ? WHERE id = ?");
                 $insertPassword->execute(array($hash, $_SESSION['id']));
                 Database::disconnect();
@@ -130,7 +131,7 @@ if (isset($_POST['updateSecurity'])) {
 
 // ANCHOR Publication article
 if (isset($_POST['publish'])) {
-    
+   
     $requser = $pdo->prepare("SELECT * FROM utilisateurs WHERE id = ?");
     $requser->execute(array($_SESSION['id']));
     $user = $requser->fetch();
@@ -140,14 +141,14 @@ if (isset($_POST['publish'])) {
         $articletitre = inscription($_POST['article_titre']);
         $articlecategorie = inscription($_POST['article_categorie']);
         $articlecontenu = inscription($_POST['article_contenu']);
-        $articleuserid = ($_SESSION['id']); 
+        $articleuserid = ($_SESSION['id']); // article takes user id
         $articletitreLength = mb_strlen($articletitre);
         $articlecontenuLength = mb_strlen($articlecontenu);
 
         if ($articletitreLength <= 31) {
 
             if ($articlecontenuLength <= 255) {
-               
+                //ANCHOR insert into datase article.  user_id takes $_SESSION['id']
                 $insertArt = $pdo->prepare('INSERT INTO articles (titre, categorie, contenu, date_time_publication, user_id) VALUES (?,?,?,NOW(),?)');
                 $insertArt->execute(array($articletitre, $articlecategorie, $articlecontenu, $articleuserid));
 
@@ -162,7 +163,3 @@ if (isset($_POST['publish'])) {
         $err = 'Veuillez remplir tout les champs';
     }
 }
-
-
-
-
